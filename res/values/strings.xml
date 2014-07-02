@@ -7,14 +7,14 @@
 
     
     <string-array name="demos_item_title">
-        <item>ShakeDetector</item>
-        <item>secure_item_title</item>
+        <item>ShakeDetectorActivity</item>
+        <item>AnimationActivity</item>
         <item>secure_item_title</item>
     </string-array>
     
     <string-array name="demo_item_comment">
         <item>demo for ShakeDetector</item>
-        <item>secure_item_comment</item>
+        <item>Animation</item>
         <item>secure_item_comment</item>
     </string-array>
 </resources>

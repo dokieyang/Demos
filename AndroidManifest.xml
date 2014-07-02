@@ -22,6 +22,7 @@
         </activity>
 
          <activity android:name=".hardware.ShakeDetectorActivity" android:label="@string/lebel_shake_detector" />
+         <activity android:name=".animation.AnimationActivity" android:label="AnimationActivity" />
         
     </application>
 

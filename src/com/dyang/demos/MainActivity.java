@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import com.dyang.demos.animation.AnimationActivity;
 import com.dyang.demos.hardware.ShakeDetectorActivity;
 
 import android.app.ActionBar;
@@ -16,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
 import android.widget.Adapter;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
@@ -29,6 +31,11 @@ public class MainActivity extends ListActivity {
 	
 	
 	private ListView mListView;
+	
+	
+	static CharSequence[] titles = DemoApplication.getContext().getResources().getStringArray(R.array.demos_item_title);
+	static CharSequence[] comments = DemoApplication.getContext().getResources().getStringArray(R.array.demo_item_comment);
+	
 	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -58,11 +65,24 @@ public class MainActivity extends ListActivity {
     }
     
     
-    private  void onListItemClick(int position){
-    	Intent intent = new Intent(this, ShakeDetectorActivity.class);
-        startActivity(intent);
-    }
-    
+	private void onListItemClick(int position) {
+		Intent intent = null ;
+		switch (position) {
+		case 0:
+			intent = new Intent(this, ShakeDetectorActivity.class);
+			break;
+		case 1:
+			intent = new Intent(this, AnimationActivity.class);
+
+			break;
+
+		default:
+			break;
+		}
+		if( intent != null){
+			startActivity(intent);
+		}
+	}
     
     private List<HashMap<String, Object>> getData(){
     	
